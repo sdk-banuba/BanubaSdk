@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.9.1-69-g431d04ab4a"
+let bnbPackageVersion: Version = "1.9.3-95-g54f78c5d8b"
 
 let package = Package(
     name: "BanubaSdk",
@@ -31,6 +31,7 @@ let package = Package(
                 "BanubaSdk_BNBAcneEyebagsRemoval",
                 "BanubaSdk_BNBPoseEstimation",
                 "BanubaSdk_BNBNeurobeautyMakeup",
+                "BanubaSdk_BNBMakeup",
                 "BanubaSdk_BNBFaceMatch",
                 "BanubaSdk_BNBVisualClip"
             ]
@@ -110,6 +111,10 @@ let package = Package(
             .exact(bnbPackageVersion)
         ),
         .package(
+            url: "https://github.com/sdk-banuba/BNBMakeup.git",
+            .exact(bnbPackageVersion)
+        ),
+        .package(
             url: "https://github.com/sdk-banuba/BNBFaceMatch.git",
             .exact(bnbPackageVersion)
         ),
@@ -121,8 +126,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "BanubaSdk",
-            url: "https://d2cm7wtcqqw29.cloudfront.net/1.9.1-69-g431d04ab4a/BanubaSdk.zip",
-            checksum: "0f8f50c558ce09cf007d908656bccc1b2307bf7682937743b93a41d11ef25f7f"
+            url: "https://d2cm7wtcqqw29.cloudfront.net/1.9.3-95-g54f78c5d8b/BanubaSdk.zip",
+            checksum: "53d246e1261091e8f0b6eab1828e527c58ea49e388f8033205b9af856007a47b"
         ),
         .target(
             name: "BanubaSdk_BNBSdkCore",
@@ -283,6 +288,15 @@ let package = Package(
                 .product(
                     name: "BNBNeurobeautyMakeup",
                     package: "BNBNeurobeautyMakeup"
+                ),
+            ]
+        ),
+        .target(
+            name: "BanubaSdk_BNBMakeup",
+            dependencies: [
+                .product(
+                    name: "BNBMakeup",
+                    package: "BNBMakeup"
                 ),
             ]
         ),
