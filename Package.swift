@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.11.1-70-g9084b7e01b"
+let bnbPackageVersion: Version = "1.11.1-1-ge047381c9"
 
 let package = Package(
     name: "BanubaSdk",
@@ -33,8 +33,7 @@ let package = Package(
                 "BanubaSdk_BNBNeurobeautyMakeup",
                 "BanubaSdk_BNBMakeup",
                 "BanubaSdk_BNBFaceMatch",
-                "BanubaSdk_BNBVisualClip",
-                "BanubaSdk_BNBFaceAttributes"
+                "BanubaSdk_BNBVisualClip"
             ]
         ),
     ],
@@ -123,16 +122,12 @@ let package = Package(
             url: "https://github.com/sdk-banuba/BNBVisualClip.git",
             .exact(bnbPackageVersion)
         ),
-        .package(
-            url: "https://github.com/sdk-banuba/BNBFaceAttributes.git",
-            .exact(bnbPackageVersion)
-        ),
     ],
     targets: [
         .binaryTarget(
             name: "BanubaSdk",
-            url: "None",
-            checksum: "e740597f37b835db7b28ee1c50067d5ea48727b17ca93cb0268dcf099a1823aa"
+            url: "https://d2cm7wtcqqw29.cloudfront.net/1.11.1-1-ge047381c9/BanubaSdk.zip",
+            checksum: "856568def7403f05708a684cd1e59750d2cfa14171f2b0b28f5c8b796de228d1"
         ),
         .target(
             name: "BanubaSdk_BNBSdkCore",
@@ -320,15 +315,6 @@ let package = Package(
                 .product(
                     name: "BNBVisualClip",
                     package: "BNBVisualClip"
-                ),
-            ]
-        ),
-        .target(
-            name: "BanubaSdk_BNBFaceAttributes",
-            dependencies: [
-                .product(
-                    name: "BNBFaceAttributes",
-                    package: "BNBFaceAttributes"
                 ),
             ]
         ),
