@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.14.1-162-g26e50cae8"
+let bnbPackageVersion: Version = "1.15.2-43-g894e9ef7d"
 
 let package = Package(
     name: "BanubaSdk",
@@ -96,8 +96,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "BanubaSdk",
-            url: "https://d2cm7wtcqqw29.cloudfront.net/1.14.1-162-g26e50cae8/BanubaSdk.zip",
-            checksum: "b2c38f95688662449872c4772d9f6ed941bc00e97024d421a18cecf5c0fe4860"
+            url: "https://d2cm7wtcqqw29.cloudfront.net/1.15.2-43-g894e9ef7d/BanubaSdk.zip",
+            checksum: "a003dcbbed590ef13ae48afb80a627768de9a2b0ade5c16bc75cba5e6fcef6d1"
         ),
         .target(
             name: "BanubaSdk_BNBSdkCore",
