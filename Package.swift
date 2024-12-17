@@ -102,7 +102,7 @@ let package = Package(
         .binaryTarget(
             name: "BanubaSdk",
             url: "https://d2cm7wtcqqw29.cloudfront.net/1.16.3/BanubaSdk.zip",
-            checksum: "72df739459291687f897881c26f3c411d2e3f6e400c7bf0e6d43f0298cff5be9"
+            checksum: "58f418ed902cef6c10937f5305aa58bce8622dd71ae7d21c7fc78925ef6c9d98"
         ),
         .target(
             name: "BanubaSdk_BNBSdkCore",
