@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.14.1-203-g079acbf0ae"
+let bnbPackageVersion: Version = "1.16.4"
 
 let package = Package(
     name: "BanubaSdk",
@@ -27,7 +27,8 @@ let package = Package(
                 "BanubaSdk_BNBBody",
                 "BanubaSdk_BNBAcneEyebagsRemoval",
                 "BanubaSdk_BNBMakeup",
-                "BanubaSdk_BNBFaceAttributes"
+                "BanubaSdk_BNBFaceAttributes",
+                "BanubaSdk_BNBLightSourceDetector"
             ]
         ),
     ],
@@ -92,12 +93,16 @@ let package = Package(
             url: "https://github.com/sdk-banuba/BNBFaceAttributes.git",
             .exact(bnbPackageVersion)
         ),
+        .package(
+            url: "https://github.com/sdk-banuba/BNBLightSourceDetector.git",
+            .exact(bnbPackageVersion)
+        ),
     ],
     targets: [
         .binaryTarget(
             name: "BanubaSdk",
-            url: "https://d2cm7wtcqqw29.cloudfront.net/1.14.1-203-g079acbf0ae/BanubaSdk.zip",
-            checksum: "d1a21e10e6aaf11724f10caebf12306c0df3b259de9831dd08a26ac0e7c2e7df"
+            url: "https://d2cm7wtcqqw29.cloudfront.net/1.16.4/BanubaSdk.zip",
+            checksum: "55d473818ad90832ecd2edc95fabbaf7171f23439782f36426608262c1853a23"
         ),
         .target(
             name: "BanubaSdk_BNBSdkCore",
@@ -231,6 +236,15 @@ let package = Package(
                 .product(
                     name: "BNBFaceAttributes",
                     package: "BNBFaceAttributes"
+                ),
+            ]
+        ),
+        .target(
+            name: "BanubaSdk_BNBLightSourceDetector",
+            dependencies: [
+                .product(
+                    name: "BNBLightSourceDetector",
+                    package: "BNBLightSourceDetector"
                 ),
             ]
         ),
