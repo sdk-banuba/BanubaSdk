@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.18.2"
+let bnbPackageVersion: Version = "1.18.2-24-g50ecbc89fd"
 
 let package = Package(
     name: "BanubaSdk",
@@ -24,8 +24,7 @@ let package = Package(
                 "BanubaSdk_BNBEyes",
                 "BanubaSdk_BNBSkin",
                 "BanubaSdk_BNBBackground",
-                "BanubaSdk_BNBBody",
-                "BanubaSdk_BNBAcneEyebagsRemoval",
+                "BanubaSdk_BNBAcne",
                 "BanubaSdk_BNBMakeup",
                 "BanubaSdk_BNBFaceAttributes",
                 "BanubaSdk_BNBLightSourceDetector"
@@ -78,11 +77,7 @@ let package = Package(
             .exact(bnbPackageVersion)
         ),
         .package(
-            url: "https://github.com/sdk-banuba/BNBBody.git",
-            .exact(bnbPackageVersion)
-        ),
-        .package(
-            url: "https://github.com/sdk-banuba/BNBAcneEyebagsRemoval.git",
+            url: "https://github.com/sdk-banuba/BNBAcne.git",
             .exact(bnbPackageVersion)
         ),
         .package(
@@ -101,8 +96,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "BanubaSdk",
-            url: "https://d2cm7wtcqqw29.cloudfront.net/1.18.2/BanubaSdk.zip",
-            checksum: "2740a6c8867a9c4c37043543fd56ae14cd9da62184cd35eeb782536aa9434c45"
+            url: "https://d2cm7wtcqqw29.cloudfront.net/1.18.2-24-g50ecbc89fd/BanubaSdk.zip",
+            checksum: "29f09a841ede5e219d524cc3a5e6e60e6b1e666b60e2210c59d357a87afc5740"
         ),
         .target(
             name: "BanubaSdk_BNBSdkCore",
@@ -204,20 +199,11 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BanubaSdk_BNBBody",
+            name: "BanubaSdk_BNBAcne",
             dependencies: [
                 .product(
-                    name: "BNBBody",
-                    package: "BNBBody"
-                ),
-            ]
-        ),
-        .target(
-            name: "BanubaSdk_BNBAcneEyebagsRemoval",
-            dependencies: [
-                .product(
-                    name: "BNBAcneEyebagsRemoval",
-                    package: "BNBAcneEyebagsRemoval"
+                    name: "BNBAcne",
+                    package: "BNBAcne"
                 ),
             ]
         ),
